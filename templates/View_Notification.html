@@ -1,0 +1,29 @@
+{#<html>#}
+{#<head>#}
+{#</head>#}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form method="get" action="/view_notification">
+    <table width="200" border="1">
+        <tr>
+            <th>Sl No</th>
+             <th>Date</th>
+             <th>Notification</th>
+        </tr>
+        {% for i in data%}
+        <tr>
+     <td>{{ loop.index }}</td>
+    <td>{{ i['notif_date'] }}</td>
+    <td>&nbsp;{{ i['notification'] }}</td>
+            <td><a href="#">edit</a></td>
+    <td><a href="/delete_notification/{{ i['notification'] }}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

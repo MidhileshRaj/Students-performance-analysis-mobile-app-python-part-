@@ -1,0 +1,79 @@
+{#<html lang="en">#}
+{##}
+{#<head>#}
+{#  <!-- Required meta tags -->#}
+{#  <meta charset="utf-8">#}
+{#  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+{##}
+{#  <title>Notification</title>#}
+{##}
+{#  <!-- Template CSS -->#}
+{#  <link rel="stylesheet" href="assets/css/style-starter.css">#}
+{##}
+{#  <!-- google fonts -->#}
+{#  <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">#}
+{#</head>#}
+{##}
+{#<body class="sidebar-menu-collapsed">#}
+{% extends 'index.html' %}
+{% block body %}
+    <form id="form1" name="form1" method="post" action="/add_notification_post">
+<div class="se-pre-con"></div>
+
+  <!-- //header-ends -->
+<!-- main content start -->
+<div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Notification</li>
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            <!-- forms 1 -->
+            <div class="card card_border py-2 mb-4">
+                <div class="cards__heading">
+                    <h3>Notification<span></span></h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-style" name="textarea" id="textarea"
+                                   placeholder="Enter the Message">
+                            <small id="emailHelp" class="form-text text-muted">Before Sending,
+                              Confirm the Message You Have Entered
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-style mt-3" name="button" id="button" value="Send">Send</button>
+                        <a href="/view_notification"><button type="button" class="btn btn-primary btn-style mt-3"> View
+                            </button></a>
+                    </form>
+                </div>
+            </div>
+            <!-- //forms 1 -->
+        </section>
+        <!-- //forms -->
+        </section>
+        <!-- //forms  -->
+
+    </div>
+    <!-- //content -->
+
+</div>
+<!-- main content end-->
+</section>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/js/bootstrap.min.js"></script>
+    </form>
+{% endblock %}
+{#</body>#}
+{##}
+{#</html>#}

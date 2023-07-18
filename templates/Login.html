@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Login</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="/static/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/web/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-agileits">
+		<h1>SPAS Admin</h1>
+		<div class="mainw3-agileinfo">
+			<!-- login form -->
+			<div class="login-form">  
+				<div class="login-agileits-top"> 	
+					<form action="/login_post" method="post">
+						<p>Username </p>
+						<input id="input1" type="text" class="name" name="textfield" placeholder="Username" required=""/>
+						<p>Password</p>
+						<input id="input2" type="password" class="password" name="textfield2" placeholder=".........." required=""/>
+{#						<label class="anim">#}
+{#							<input type="checkbox" class="checkbox">#}
+{#							<span> Remember me ?</span> #}
+{#						</label>   #}
+						<input type="submit" value="Login"> 
+					</form> 	
+				</div> 
+{#				<div class="login-agileits-bottom"> #}
+{#					<h6><a href="#">Forgot password?</a></h6>#}
+{#				</div>  #}
+				
+
+			</div> 
+		</div>	
+	</div>	
+	<!-- //main -->
+	<!-- js -->  
+	<script src="/static/web/js/superplaceholder.js"></script>
+	<script>
+	superplaceholder({
+			el: input1,
+			sentences: [ 'Enter a Valid Username' ],
+			options: {
+				loop: true,
+				startOnFocus: false
+			}
+		})
+		superplaceholder({
+			el: input2,
+			sentences: [ 'Enter Your Password' ],
+			options: {
+				loop: true,
+				startOnFocus: false 
+			}
+		})
+	</script>
+	<!-- //js --> 
+</body>
+</html>

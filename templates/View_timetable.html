@@ -1,0 +1,111 @@
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/view_timetable_post">
+<table width="200" border="1">
+    <tr>
+    <th>Dept_Name</th>
+    <td>
+      <select name="department">
+        {% for i in data11 %}
+          <option value="{{ i['dept_id'] }}">{{ i['dept_name'] }}</option>
+        {% endfor %}
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Course</th>
+    <td>
+      <select name="course">
+        {% for i in data1 %}
+          <option value="{{ i['course_id'] }}">{{ i['course_name'] }}</option>
+        {% endfor %}
+      </select>
+    </td>
+  </tr>
+
+    <tr>
+    <th>Semester</th>
+    <td>
+      <select name="sem" id="sem">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+    </select>
+    </td>
+  &nbsp;&nbsp;
+
+    <td>
+      <input type="submit" name="button" id="button" value="Show" />
+    </td>
+    </tr></table>
+<br><br>
+
+{% if len == 1  %}
+<table  border="1">
+    <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+    </tr>
+    <tr>
+        <th>Monday</th>
+        <td>{{ data[0][0] }}</td>
+        <td>{{ data[0][1] }}</td>
+        <td>{{ data[0][2] }}</td>
+        <td>{{ data[0][3] }}</td>
+        <td>{{ data[0][4] }}</td>
+    </tr>
+    <tr>
+        <th>Tuesday</th>
+        <td>{{ data[1][0] }}</td>
+        <td>{{ data[1][1] }}</td>
+        <td>{{ data[1][2] }}</td>
+        <td>{{ data[1][3] }}</td>
+        <td>{{ data[1][4] }}</td>
+    </tr>
+    <tr>
+        <th>Wednesday</th>
+        <td>{{ data[2][0] }}</td>
+        <td>{{ data[2][1] }}</td>
+        <td>{{ data[2][2] }}</td>
+        <td>{{ data[2][3] }}</td>
+        <td>{{ data[2][4] }}</td>
+    </tr>
+    <tr>
+        <th>Thursday</th>
+        <td>{{ data[3][0] }}</td>
+        <td>{{ data[3][1] }}</td>
+        <td>{{ data[3][2] }}</td>
+        <td>{{ data[3][3] }}</td>
+        <td>{{ data[3][4] }}</td>
+    </tr>
+    <tr>
+        <th>Friday</th>
+        <td>{{ data[4][0] }}</td>
+        <td>{{ data[4][1] }}</td>
+        <td>{{ data[4][2] }}</td>
+        <td>{{ data[4][3] }}</td>
+        <td>{{ data[4][4] }}</td>
+    </tr>
+</table>
+{% endif %}
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

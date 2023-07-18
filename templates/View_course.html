@@ -1,0 +1,45 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form action="" method="get"><table width="auto" border="1">
+  <tr>
+    <td><input type="text" name="textfield" id="textfield" /></td>
+    <td><input type="submit" name="button" id="button" value="Search
+    " /></td>
+  </tr>
+</table>
+  <table width="auto" border="1">
+    <tr>
+      <th scope="col">Sl_No</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Dept_Name</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+     {% for i in data %}
+         <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['course_name'] }}</td>
+      <td>{{ i['sem_duration'] }}</td>
+      <td><select name="dept">
+          <option value="{{ i['dept_id'] }}">{{ i['dept_name'] }}</option>
+      </select></td>
+      <td><a href="/delete_course/{{ i['course_name'] }}">Delete</a><br />
+      <a href="#">Edit</a></td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

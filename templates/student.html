@@ -1,0 +1,83 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'index.html' %}
+{% block body %}
+
+<form action="" method="get">
+<table width="200" border="1">
+  <tr>
+    <td><input type="text" name="textfield" id="textfield" /></td>
+    <td><input type="submit" name="button" id="button" value="Search" /></td>
+  </tr>
+</table>
+<table width="200" border="1">
+  <tr>
+      <th>Sl_No</th>
+    <th scope="col">Name</th>
+    <th scope="col">ph_no</th>
+      <th>Std_Mail</th>
+      <th scope="col">DOB</th>
+    <th scope="col">bld_grp</th>
+    <th scope="col">H_name</th>
+    <th scope="col">place</th>
+    <th scope="col">city</th>
+    <th scope="col">state</th>
+    <th scope="col">pin</th>
+    <th scope="col">pare_name</th>
+    <th scope="col">pare_ph</th>
+    <th scope="col">pare_job</th>
+    <th scope="col">pare_mail</th>
+    <th scope="col">admn_no</th>
+    <th scope="col">reg_no</th>
+    <th scope="col">course</th>
+    <th scope="col">sem</th>
+    <th scope="col">cast</th>
+    <th scope="col">religion</th>
+    <th scope="col">prev_schl</th>
+    <th scope="col">prev_mark</th>
+    <th scope="col">photo</th>
+
+  </tr>
+{% for i in data%}
+  <tr>
+     <td>{{ loop.index }}</td>
+    <td>{{ i['name'] }}</td>
+    <td>&nbsp;{{ i['Std_ph'] }}</td>
+      <td>{{ i['Std_mail'] }}</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+    <td>{{ i['bld_grp'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['H_name'] }}</td>
+    <td>&nbsp;{{ i['place'] }}</td>
+    <td>&nbsp;{{ i['city'] }}</td>
+    <td>&nbsp;{{ i['state'] }}</td>
+    <td>{{ i['pin'] }}</td>
+    <td>{{ i['Parent_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['parent_ph'] }}</td>
+    <td>&nbsp;{{ i['parent_job'] }}</td>
+    <td>{{ i['parent-mail'] }}&nbsp;</td>
+    <td>{{ i['Admn_no'] }}&nbsp;</td>
+    <td>{{ i['Reg_no'] }}&nbsp;</td>
+    <td>{{ i['course'] }}
+</td>
+    <td>{{ i['sem'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['cast'] }}</td>
+    <td>&nbsp;{{ i['religion'] }}</td>
+    <td>{{ i['prev_schl'] }}&nbsp;</td>
+    <td>{{ i['prev-mark'] }}&nbsp;</td>
+   <td>&nbsp;<img src="{{ i['photo'] }} " height="100px" width="100px"></td>
+    <td><a href="/student_approve/{{ i['Std_id'] }}/{{ i['std_lid'] }}">Approve</a></td>
+    <td><a href="/student_reject/{{ i['Std_id'] }}">Reject</a></td>
+   {% endfor %}
+  </tr>
+</table>
+
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

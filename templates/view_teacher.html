@@ -1,0 +1,57 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form action="" method="get">
+<table width="200" border="1">
+  <tr>
+    <td><input type="text" name="textfield" id="textfield" /></td>
+    <td><input type="submit" name="button" id="button" value="Search" /></td>
+  </tr>
+</table>
+<table width="200" border="1">
+  <tr>
+    <th scope="col">Sl_No</th>
+    <th scope="col">Name</th>
+    <th scope="col">dept</th>
+    <th scope="col">dob</th>
+    <th scope="col">qualification</th>
+    <th scope="col">Addrss</th>
+    <th scope="col">ph_no</th>
+   <th scope="col">Email</th>
+    <th scope="col">Photo</th>
+
+  <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+   <th scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}&nbsp;</td>
+    <td>{{ i['name'] }}&nbsp;</td>
+    <td>{{ i['dept_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['dob'] }}</td>
+    <td>&nbsp;{{ i['qualification'] }}</td>
+    <td>&nbsp;{{ i['h_name'] }},{{ i['place'] }},{{ i['city'] }},{{ i['state'] }},{{ i['pin'] }},{{ i['post'] }},{{ i['District'] }}</td>
+      <td>{{ i['ph_no'] }}</td>
+    <td>{{ i['email'] }}</td>
+      <td><img src="{{ i['photo'] }} " height="100px" width="100px"></td>
+    <td><a href="#">edit</a></td>
+    <td><a href="/delete_teacher/{{ i['Teach_lid'] }}">delete</a></td>
+    <td><a href="#">Hod manage</a> </td>
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

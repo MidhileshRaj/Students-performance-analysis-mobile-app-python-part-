@@ -1,0 +1,35 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+<form action="" method="get" name="form">
+<table width="200" border="1">
+  <tr>
+      <th>Sl_No</th>
+    <th scope="col">Date</th>
+    <th scope="col">Feedback</th>
+    <th scope="col">std_id</th>
+    <th scope="col">Sub_id</th>
+    <th scope="col">Rating</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+      <td>{{ loop.index }}</td>
+    <td>{{ i['dates'] }}&nbsp;</td>
+    <td>{{ i['feedback'] }}&nbsp;</td>
+    <td>&nbsp{{ i['name'] }}</td>
+    <td>&nbsp;{{ i['sub_name'] }}</td>
+    <td>&nbsp;{{ i['rating'] }}</td>
+  </tr>{% endfor %}
+</table>
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

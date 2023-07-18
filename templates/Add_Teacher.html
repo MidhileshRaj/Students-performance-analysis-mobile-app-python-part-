@@ -1,0 +1,86 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form action="/add_teacher_post" method="post" enctype="multipart/form-data">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Department</th>
+      <td>
+      <select name="textfield2">
+          {% for i in data %}
+          <option value="{{ i['dept_id'] }}">{{ i['dept_name'] }}</option>
+          {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><input type="date" name="textfield3" id="textfield3" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Qualification</th>
+      <td><input type="text" name="textfield4" id="textfield4" /></td>
+    </tr>
+    <tr>
+      <th scope="row">H_Name</th>
+      <td><input type="text" name="textfield5" id="textfield5" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" name="textfield6" id="textfield6" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><input type="text" name="textfield7" id="textfield7" /></td>
+    </tr>
+    <tr>
+      <th scope="row">PIN</th>
+      <td><input type="text" name="textfield8" id="textfield8" /></td>
+    </tr>
+    <tr>
+      <th scope="row">City</th>
+      <td><input type="text" name="textfield9" id="textfield9" /></td>
+    </tr>
+    <tr>
+      <th scope="row">District</th>
+      <td><input type="text" name="textfield10" id="textfield10" /></td>
+    </tr>
+    <tr>
+      <th scope="row">State</th>
+      <td><input type="text" name="textfield11" id="textfield11" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Ph_No</th>
+      <td><input type="text" name="textfield12" id="textfield12" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><input type="text" name="textfield13" id="textfield13" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Photo</th>
+      <td><input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+     <th>
+      <td><input type="submit" name="submit" value="Add" /></td>
+    </th>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

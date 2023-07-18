@@ -1,0 +1,85 @@
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="add_tt_post">
+<table width="200" border="1">
+  <tr>
+    <th>Day</th>
+    <td><select name="Day" id="day">
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    </select></td>
+  </tr>
+</tr>
+  <tr>
+    <th>Department</th>
+    <td><select name="department">
+        {% for i in data %}
+          <option value="{{ i['dept_id'] }}">{{ i['dept_name'] }}</option>
+        {% endfor %}
+      </select></td>
+  </tr>
+
+<tr>
+    <th>Course</th>
+    <td><select name="course">
+        {% for i in data1 %}
+          <option value="{{ i['course_id'] }}">{{ i['course_name'] }}</option>
+        {% endfor %}
+      </select></td>
+  </tr>
+
+<tr>
+    <th>Semester</th>
+    <td><select name="sem" id="sem">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+    </select></td>
+  </tr>
+
+    <tr>
+    <th>Subject</th>
+    <td><select name="subject">
+        {% for i in data2 %}
+          <option value="{{ i['sub_id'] }}">{{ i['sub_name'] }}</option>
+        {% endfor %}
+      </select></td>
+  </tr>
+</table>
+<br/>
+<table width="200" border="1">
+ <tr>
+    <th>Periods</th>
+    <td><select name="periods" id="per">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select></td>
+  </tr>
+
+    <tr><td><input type="submit" name="button" id="button" value="Add" /></td></tr>
+</table>
+<br />
+
+
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

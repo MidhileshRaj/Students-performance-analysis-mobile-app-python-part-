@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+<title>Add Teacher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspire Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- css -->
+{#<link href="/static/Add/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />#}
+<link rel="stylesheet" href="/static/Add/css/style.css" type="text/css" media="all" />
+{#<link rel="stylesheet" 	href="/static/Add/css/chocolat.css" type="text/css" media="all">#}
+<!--// css -->
+<!-- font -->
+<link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- //font -->
+	<!-- Popup-Box-JavaScript -->
+</head>
+<body>
+			<div class="contact-right-w3l">
+                <h3>Register Teacher</h3><br>
+				<form action="#" method="post">
+                    <table>
+                        <tr><input type="text"  class="name" name="name" placeholder="Full Name" required=""></tr>
+                        <tr>
+{#                            <input type="text"  class="name" name="name" placeholder="Department" required="">#}
+                                <td>
+                                    <select name="textfield2">
+                                        {% for i in data %}
+                                        <option value="{{ i['dept_id'] }}">{{ i['dept_name'] }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </td>
+                        </tr>
+                        <tr><input type="date"  class="name" name="name" placeholder="Date of Birth" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="Qualification" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="House Name" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="Place" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="Post" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="PIN" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="District" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="State" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="Phone Number" required=""></tr>
+                        <tr><input type="text"  class="name" name="name" placeholder="Email" required=""></tr>
+                        <tr><input type="file"  class="name" name="name" placeholder="Photo" required=""></tr>
+{#					<textarea placeholder="Your Message" required=""></textarea>#}
+					<input type="submit" value="ADD">
+                    </table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
